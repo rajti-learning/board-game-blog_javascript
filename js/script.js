@@ -62,7 +62,7 @@
 
   function generateTitleLinks(){
 
-    /* remove contents of titleList */
+    /* [DONE] remove contents of titleList */
 
     const titleList = document.querySelector(optTitleListSelector);
     titleList.innerHTML = '';
