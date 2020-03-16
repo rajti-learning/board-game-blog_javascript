@@ -4,7 +4,6 @@
   const titleClickHandler = function(event){
     event.preventDefault();
     const clickedElement = this;
-    console.log('Link was clicked!');
 
     /* [DONE] remove class 'active' from all article links  */
 
@@ -17,7 +16,6 @@
     /* [DONE] add class 'active' to the clicked link */
 
     clickedElement.classList.add('active');
-    console.log('clickedElement:', clickedElement);
 
     /* [DONE] remove class 'active' from all articles */
 
@@ -46,14 +44,6 @@
     /* [DONE] add class 'active' to the correct article */
 
     correctArticle.classList.add('active');
-    console.log('correctArticle:', correctArticle);
-
-  }
-
-  const links = document.querySelectorAll('.titles a');
-
-  for(let link of links){
-    link.addEventListener('click', titleClickHandler);
   }
 
   const optArticleSelector = '.post',
@@ -91,10 +81,15 @@
 
       /* insert link into titleList */
       html = html + linkHTML;
-      console.log(html);
     }
 
     titleList.innerHTML = html;
+
+    const links = document.querySelectorAll('.titles a');
+
+    for(let link of links){
+      link.addEventListener('click', titleClickHandler);
+    }
 
   }
 
