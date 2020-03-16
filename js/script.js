@@ -79,7 +79,7 @@
 
       const linkHTML = '<li><a href="#' + articleId + '"><span>' + articleTitle + '</span></a></li>';
 
-      /* insert link into titleList */
+      /* [DONE] insert link into titleList */
       html = html + linkHTML;
     }
 
