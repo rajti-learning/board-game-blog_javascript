@@ -27,7 +27,7 @@
 
     /* [DONE] get 'href' attribute from the clicked link */
 
-      const linkAttribute = clickedElement.getAttribute('href').slice(1);
+    const linkAttribute = clickedElement.getAttribute('href').slice(1);
 
     /* [DONE] find the correct article using the selector (value of 'href' attribute) */
 
@@ -47,8 +47,8 @@
   }
 
   const optArticleSelector = '.post',
-  optTitleSelector = '.post-title',
-  optTitleListSelector = '.titles';
+    optTitleSelector = '.post-title',
+    optTitleListSelector = '.titles';
 
   function generateTitleLinks(){
 
