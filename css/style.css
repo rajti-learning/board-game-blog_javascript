@@ -95,7 +95,7 @@ body {
 .post.active {
   opacity: 1;
   position: relative;
-  transition: 1s all;
+  transition: opacity 0.3s ease-in-out;
 }
 
 .post-author {
