@@ -26,23 +26,15 @@
 
     /* [DONE] get 'href' attribute from the clicked link */
 
-    const linkAttribute = clickedElement.getAttribute('href').slice(1);
+    const linkAttribute = clickedElement.getAttribute('href');
 
     /* [DONE] find the correct article using the selector (value of 'href' attribute) */
 
-    const listArticles = document.querySelectorAll('.posts article.post');
-    let correctArticle;
-
-    for(let listArticle of listArticles){
-      const idArticle = listArticle.getAttribute('id');
-      if (linkAttribute === idArticle) {
-        correctArticle = listArticle;
-      }
-    }
+    const targetArticle = document.querySelector(linkAttribute);
 
     /* [DONE] add class 'active' to the correct article */
 
-    correctArticle.classList.add('active');
+    targetArticle.classList.add('active');
   }
 
   const optArticleSelector = '.post',
