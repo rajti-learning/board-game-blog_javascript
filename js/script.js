@@ -44,11 +44,11 @@
 
   function generateTitleLinks(customSelector = ''){
     console.log('selector', customSelector);
+
     /* [DONE] remove contents of titleList */
 
     const titleList = document.querySelector(optTitleListSelector);
     titleList.innerHTML = '';
-
 
     /* [DONE] for each article */
 
