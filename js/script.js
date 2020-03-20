@@ -1,5 +1,7 @@
 'use strict';
 {
+
+/* ----------------------------------------------------------------------------------------*/
   const titleClickHandler = function(event){
     event.preventDefault();
     const clickedElement = this;
@@ -37,10 +39,14 @@
     targetArticle.classList.add('active');
   }
 
+/* ----------------------------------------------------------------------------------------*/
+
   const optArticleSelector = '.post',
     optTitleSelector = '.post-title',
     optTitleListSelector = '.titles',
     optArticleTagsSelector ='.post-tags .list';
+
+/* ----------------------------------------------------------------------------------------*/
 
   function generateTitleLinks(){
 
@@ -86,32 +92,61 @@
 
   generateTitleLinks();
 
+/* ----------------------------------------------------------------------------------------*/
+
   function generateTags(){
     /* find all articles */
 
+    const articles = document.querySelectorAll(optArticleSelector);
+
     /* START LOOP: for every article: */
+
+    for (let article of articles) {
 
       /* find tags wrapper */
 
+      const tagWrapper = article.querySelector(optArticleTagsSelector);
+
       /* make html variable with empty string */
+
+      let html = '';
 
       /* get tags from data-tags attribute */
 
+      const tags = article.getAttribute('data-tags');
+
       /* split tags into array */
+
+      const splitTags = tags.split(' ');
 
       /* START LOOP: for each tag */
 
+      for (let splitTag of splitTags) {
+
         /* generate HTML of the link */
+
+        const link = '<li><a href="#tag-' + splitTag + '">' + splitTag + '</a></li>';
 
         /* add generated code to html variable */
 
+        html = html + link;
+
       /* END LOOP: for each tag */
+
+      }
 
       /* insert HTML of all the links into the tags wrapper */
 
+      tagWrapper.innerHTML = html;
+
     /* END LOOP: for every article: */
+
+    }
+
   }
 
   generateTags();
 
 }
+
+/* ----------------------------------------------------------------------------------------*/
