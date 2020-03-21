@@ -247,7 +247,7 @@
 
       /* generate HTML of the link */
 
-      const html = '<a href="#' + author + '">' + author + '</a>';
+      const html = '<a href="#author-' + author + '">' + author + '</a>';
 
       /* insert HTML of the link into the author wrapper */
 
@@ -260,5 +260,31 @@
   }
 
   generateAuthors();
+
+/* ----------------------------------------------------------------------------------------*/
+
+  function addClickListenersToAuthors(){
+
+    /* find all links to authors */
+
+    authorLinks = document.querySelectorAll('a[href^="#author-"]');
+
+    /* START LOOP: for each link */
+
+    for (let authorLink of authorLinks) {
+
+      /* add authorClickHandler as event listener for that link */
+
+      authorLink.addEventListener('click', authorClickHandler);
+
+    /* END LOOP: for each link */
+
+    }
+
+  }
+
+  addClickListenersToAuthors();
+
+/* ----------------------------------------------------------------------------------------*/
 
 }
