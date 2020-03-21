@@ -200,7 +200,7 @@
 
     /* execute function "generateTitleLinks" with article selector as argument */
 
-    generateTitleLinks('[data-tags^="' + tag + '"]');
+    generateTitleLinks('[data-tags~="' + tag + '"]');
   }
 
   function addClickListenersToTags(){
