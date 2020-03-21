@@ -44,7 +44,8 @@
   const optArticleSelector = '.post',
     optTitleSelector = '.post-title',
     optTitleListSelector = '.titles',
-    optArticleTagsSelector ='.post-tags .list';
+    optArticleTagsSelector ='.post-tags .list',
+    optArticleAuthorSelector = '.post-author';
 
 /* ----------------------------------------------------------------------------------------*/
 
@@ -227,49 +228,30 @@
 /* ----------------------------------------------------------------------------------------*/
 
   function generateAuthors(){
-    
+
     /* find all articles */
 
+    const articles = document.querySelectorAll(optArticleSelector);
 
     /* START LOOP: for every article: */
 
+    for (let article of articles) {
 
+      /* find author wrapper */
 
-      /* find tags wrapper */
+      const authorWrapper = article.querySelector(optArticleAuthorSelector);
 
+      /* get author from data-author attribute */
 
+      const author = article.getAttribute("data-author");
 
-      /* make html variable with empty string */
+      /* generate HTML of the link */
 
+      const html = '<a href="#' + author + '">' + author + '</a>';
 
+      /* insert HTML of the link into the author wrapper */
 
-      /* get tags from data-tags attribute */
-
-
-
-      /* split tags into array */
-
-
-
-      /* START LOOP: for each tag */
-
-
-
-        /* generate HTML of the link */
-
-
-
-        /* add generated code to html variable */
-
-
-
-      /* END LOOP: for each tag */
-
-      }
-
-      /* insert HTML of all the links into the tags wrapper */
-
-
+      authorWrapper.innerHTML = html;
 
     /* END LOOP: for every article: */
 
