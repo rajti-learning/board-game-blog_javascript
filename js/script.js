@@ -45,7 +45,7 @@
     optTitleSelector = '.post-title',
     optTitleListSelector = '.titles',
     optArticleTagsSelector ='.post-tags .list',
-    optArticleAuthorSelector = '.post-author';
+    optArticleAuthorSelector = '.post-author',
     optTagsListSelector = '.tags.list';  //spróbowac potem z odwrotną kolejnością czy zadziała
 
 /* ----------------------------------------------------------------------------------------*/
