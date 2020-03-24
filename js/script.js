@@ -96,6 +96,43 @@
 
 /* ----------------------------------------------------------------------------------------*/
 
+  function calculateTagsParams(tags) {
+
+    /* [DONE] create variables for minimum and maximym value and new object for those parameters */
+
+    let minTag = 999;
+    let maxTag = 0;
+    const tagsParams = {};
+
+    /* [DONE] start for-in loop to go throug all key object values */
+
+    for (let tag in tags) {
+
+    /* [DONE] create if block to find minimum values */
+
+      if (tags[tag] <= minTag) {
+        minTag = tags[tag];
+      }
+
+
+    /* [DONE] create if block to find maximum values */
+
+      if (tags[tag] > maxTag) {
+        maxTag = tags[tag];
+      }
+
+    /* [DONE] end for-in loop to go throug all key object values */
+    }
+
+    tagsParams['max'] = maxTag;
+    tagsParams['min'] = minTag;
+
+    return tagsParams;
+
+  }
+
+/* ----------------------------------------------------------------------------------------*/
+
   function generateTags(){
 
     /* [DONE] create a new variable allTags with an empty array */
@@ -166,6 +203,11 @@
 
     const tagList = document.querySelector(optTagsListSelector);
 
+    /* [DONE] create constant for function calculate tags parameters */
+
+    const tagsParams = calculateTagsParams(allTags);
+    console.log('tagsParams:', tagsParams);
+
     /* [DONE] create variable for all links HTML code */
 
     let allTagsHTML = '';
@@ -176,7 +218,7 @@
 
       /* [DONE] generate code of a link and add it to allTagsHTML */
 
-      allTagsHTML += '<li><a href="#tag-' + tag + '">' + tag + ' (' + allTags[tag] + ') ' + '</a></li>';
+      allTagsHTML += '<li><a href="#tag-' + tag + '">' + tag + ' (' + allTags[tag] + ')' + '</a></li>';
 
     /* [DONE] END LOOP: for each tag in allTags: */
 
