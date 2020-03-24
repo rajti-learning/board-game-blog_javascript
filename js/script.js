@@ -162,32 +162,30 @@
 
     }
 
-    /* [IN PROGRESS] find list of tags in right column */
+    /* [DONE] find list of tags in right column */
 
     const tagList = document.querySelector(optTagsListSelector);
 
-    /* [IN PROGRESS] create variable for all links HTML code */
+    /* [DONE] create variable for all links HTML code */
 
     let allTagsHTML = '';
 
-    /* [IN PROGRESS] START LOOP: for each tag in allTags: */
+    /* [DONE] START LOOP: for each tag in allTags: */
 
     for (let tag in allTags) {
 
-      /* [IN PROGRESS] generate code of a link and add it to allTagsHTML */
+      /* [DONE] generate code of a link and add it to allTagsHTML */
 
-      //alltags[tag] =
-      allTagsHTML += tag + ' (' + allTags[tag] + ') ';
+      allTagsHTML += '<li><a href="#tag-' + tag + '">' + tag + ' (' + allTags[tag] + ') ' + '</a></li>';
 
-
-    /* [IN PROGRESS] END LOOP: for each tag in allTags: */
+    /* [DONE] END LOOP: for each tag in allTags: */
 
     }
 
-    /*[IN PROGRESS] add HTML from allTagsHTML to tagList */
+    /*[DONE] add HTML from allTagsHTML to tagList */
 
-    allTags.innerHTML = allTagsHTML;
-console.log(allTags);
+    tagList.innerHTML = allTagsHTML;
+
   }
 
   generateTags();
