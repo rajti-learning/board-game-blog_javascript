@@ -126,3 +126,36 @@ body {
     margin: 0 10px 0 0;
   }
 }
+
+/* Tags */
+.tags {
+
+  font-size: 30px;
+
+  li {
+    display: inline;
+    overflow-wrap: anywhere;
+    padding: 5px;
+  }
+
+  .tag-size-5 {
+    font-size: 100%;
+  }
+
+  .tag-size-4 {
+    font-size: 90%;
+  }
+
+  .tag-size-3 {
+    font-size: 80%
+  }
+
+  .tag-size-2 {
+    font-size: 70%;
+  }
+
+  .tag-size-1 {
+    font-size: 60%;
+  }
+
+}

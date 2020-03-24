@@ -135,7 +135,7 @@
 
 /* ----------------------------------------------------------------------------------------*/
 
-  function calculateTagClass(count, params){}
+  function calculateTagClass(count, params){
 
     const normalizedCount = count - params.min;
 
@@ -146,6 +146,8 @@
     const classNumber = Math.floor(percentage * (optCloudClassCount - 1) + 1);
 
     return optCloudClassPrefix + classNumber;
+
+  }
 
 /* ----------------------------------------------------------------------------------------*/
 
@@ -222,7 +224,6 @@
     /* [DONE] create constant for function calculate tags parameters */
 
     const tagsParams = calculateTagsParams(allTags);
-    console.log('tagsParams:', tagsParams);
 
     /* [DONE] create variable for all links HTML code */
 
@@ -234,7 +235,7 @@
 
       /* [DONE] generate code of a link and add it to allTagsHTML */
 
-      allTagsHTML += '<li><a class="' + calculateTagClass[allTags[tag], tagsParams] + '" href="#tag-' + tag + '">' + tag + ' (' + allTags[tag] + ')' + '</a></li>';
+      allTagsHTML += '<li><a class="' + calculateTagClass(allTags[tag], tagsParams) + '" href="#tag-' + tag + '">' + tag + '</a></li>';
 
     /* [DONE] END LOOP: for each tag in allTags: */
 

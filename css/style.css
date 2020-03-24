@@ -111,4 +111,35 @@ body {
 .post-tags p {
   margin: 0 10px 0 0;
 }
+
+/* Tags */
+.tags {
+  font-size: 30px;
+}
+
+.tags li {
+  display: inline;
+  overflow-wrap: anywhere;
+  padding: 5px;
+}
+
+.tags .tag-size-5 {
+  font-size: 100%;
+}
+
+.tags .tag-size-4 {
+  font-size: 90%;
+}
+
+.tags .tag-size-3 {
+  font-size: 80%;
+}
+
+.tags .tag-size-2 {
+  font-size: 70%;
+}
+
+.tags .tag-size-1 {
+  font-size: 60%;
+}
 /*# sourceMappingURL=style.css.map */
