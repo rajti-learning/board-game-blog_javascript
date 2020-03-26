@@ -188,7 +188,6 @@
         count: allTags[tag],
         className: calculateTagClass(allTags[tag], tagsParams),
       });
-      console.log(allTagsData);
     }
 
     //tagList.innerHTML = allTagsHTML;
@@ -209,9 +208,7 @@
     const activeTagLinks = document.querySelectorAll(select.all.linksTo.active.tags);
 
     for (let activeTagLink of activeTagLinks) {
-
       activeTagLink.classList.remove('active');
-
     }
 
     const targetTagLinks = document.querySelectorAll('a[href="' + href + '"]');
