@@ -47,6 +47,8 @@ body {
 .posts {
   -ms-flex: 2 0 0px;
       flex: 2 0 0;
+  position: relative;
+  overflow: hidden;
 }
 
 .sidebar, .posts {
