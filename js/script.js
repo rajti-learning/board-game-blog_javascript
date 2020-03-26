@@ -90,7 +90,6 @@
     for(let article of articles) {
       const articleId = article.getAttribute('id');
       const articleTitle = article.querySelector(select.title).innerHTML;
-      //const linkHTML = '<li><a href="#' + articleId + '"><span>' + articleTitle + '</span></a></li>';
       const linkHTMLData = {id: articleId, title: articleTitle};
       const linkHTML = templates.articleLink(linkHTMLData);
       html = html + linkHTML;
@@ -160,7 +159,6 @@
       const splitTags = tags.split(' ');
 
       for (let splitTag of splitTags) {
-        //const link = '<li><a href="#tag-' + splitTag + '">' + splitTag + '</a></li>';
         const linkHTMLData = {tag: splitTag,};
         const linkHTML = templates.tagLink(linkHTMLData);
         html = html + linkHTML;
@@ -178,11 +176,9 @@
 
     const tagList = document.querySelector(select.listOf.tags);
     const tagsParams = calculateTagsParams(allTags);
-    //let allTagsHTML = '';
     const allTagsData = {tags: [],};
 
     for (let tag in allTags) {
-      //allTagsHTML += '<li><a class="' + calculateTagClass(allTags[tag], tagsParams) + '" href="#tag-' + tag + '">' + tag + '</a></li>';
       allTagsData.tags.push({
         tag: tag,
         count: allTags[tag],
@@ -190,7 +186,6 @@
       });
     }
 
-    //tagList.innerHTML = allTagsHTML;
     tagList.innerHTML = templates.tagCloudLink(allTagsData);
 
   }
@@ -245,7 +240,6 @@
     for (let article of articles) {
       const authorWrapper = article.querySelector(select.article.author);
       const author = article.getAttribute('data-author');
-      //const html = '<a href="#author-' + author + '">' + author + '</a>';
       const linkHTMLData = {author: author,};
       const linkHTML = templates.authorLink(linkHTMLData);
 
@@ -260,18 +254,15 @@
     }
 
     const authorsList = document.querySelector(select.listOf.authors);
-    //let allAuthorsHTML = '';
     const allAuthorsData = {authors: [],};
 
     for (let author in allAuthors) {
-      //allAuthorsHTML += '<li><a href="#author-' + author + '">' + author + ' (' + allAuthors[author] + ')' + '</a></li>'
       allAuthorsData.authors.push({
         author: author,
         count: allAuthors[author],
       });
     }
 
-    //authorsList.innerHTML = allAuthorsHTML;
     authorsList.innerHTML = templates.authorsList(allAuthorsData);
 
   }
